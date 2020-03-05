@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .stu {
+            width: 500px;
+            height: 600px;
+            margin: auto;
+            position: relative;
+        }
+        /* 需要标红的边框标题和*号 */
+        
+        .red {
+            color: red;
+            font-size: 1.2em;
+        }
+        
+        input {
+            height: 28px;
+            margin-bottom: 10px;
+            line-height: 28px;
+            width: 450px;
+        }
+        /* 各个属性 */
+        
+        .attributes {
+            margin-bottom: 10px;
+        }
+        /* 提交按钮 */
+        
+        .sub {
+            border: 1px solid rgb(200, 200, 200);
+            background-color: rgb(222, 222, 222);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stu">
+        <!-- 标题 -->
+        <h1>学生信息</h1>
+
+        <fieldset>
+            <!-- 边框 -->
+            <legend class="red">学生档案</legend>
+            <form id="testform" method="get" action="#S">
+
+                <!-- 姓名 -->
+                <div class="attributes">姓名：</div>
+                <input type="text" name="name1" required placeholder="请输入姓名" autocomplete="on" />
+                <span class="red"> *</span>
+
+                <!-- 学号 -->
+                <div class="attributes">学号：</div>
+                <input type="number" name="number" required placeholder="请输入学号" autocomplete="on" />
+                <span class="red"> *</span>
+
+                <!-- 手机号 -->
+                <div class="attributes">手机号码：</div>
+                <input type="tel" name="tel" required placeholder="请输入手机号" autocomplete="on" />
+                <span class="red"> *</span>
+
+                <!-- 邮箱 -->
+                <div class="attributes">邮箱地址：</div>
+                <input type="email" name="email" required placeholder="请输入邮箱地址" autocomplete="on" />
+                <span class="red"> *</span>
+
+                <!-- 录取学校 -->
+                <div class="attributes">录取学校：</div>
+                <input type="search" name="school" list="names" />
+
+                <!--  “录取学校”为带有可选列表的具有搜索功能的文本框 -->
+                <datalist id="names">
+                    <option>北京大学</option>
+                    <option>清华大学</option>
+                    <option>河北大学</option>
+                    <option>河北师范大学</option>
+                </datalist>
+
+                <!-- 入学成绩 -->
+                <div class="attributes">入学成绩：</div>
+                <input type="number" name="score" />
+
+                <!-- 入学时间 -->
+                <div class="attributes">入学时间：</div>
+                <input type="date" name="date" />
+
+                <!-- 提交按钮 -->
+                <input type="submit" value="提交" class="sub" />
+            </form>
+
+        </fieldset>
+    </div>
+</body>
+
+</html>
