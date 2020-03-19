@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面换肤</title>
+    <style>
+        .top {
+            width: 550px;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+        
+        .font {
+            color: red;
+            font: bold 2em '黑体';
+        }
+        
+        #skin {
+            border: 1.5px solid rgb(161, 155, 155);
+            padding-left: 5px;
+        }
+        
+        li {
+            width: 20px;
+            height: 30px;
+            display: inline-block;
+            margin-right: 5px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        
+        #skin #selected {
+            width: 20px;
+            height: 30px;
+            display: inline-block;
+            margin-right: 5px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .skin0 {
+            background-color: gray;
+        }
+        
+        .skin1 {
+            background-color: plum;
+        }
+        
+        .skin2 {
+            background-color: rgb(139, 13, 13);
+        }
+        
+        .skin3 {
+            background-color: lightskyblue;
+        }
+        
+        .skin4 {
+            background-color: rgb(255, 196, 0);
+        }
+        
+        .skin5 {
+            background-color: lightgreen
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset class="top">
+        <legend class="font">网页换肤</legend>
+        <ul id="skin">
+            <li class="skin0" title="gray"></li>
+            <li class="skin1" title="purple"></li>
+            <li class="skin2" title="red"></li>
+            <li class="skin3" title="blue"></li>
+            <li class="skin4" title="orange"></li>
+            <li class="skin5" title="green"></li>
+        </ul>
+        <dic id="div" class="skin0">
+            localstorage将数据保存在客户端本地的硬件设备中。 即使浏览器被关闭了，该数据仍然存在，下次打开浏览器访问网站时仍然可以继续使用。
+        </dic>
+    </fieldset>
+
+    <script>
+        // 获取段落节点
+        var div = document.getElementById("div");
+        // 获取滑块的集合
+        var skinList = document.getElementsByTagName("li");
+
+        // 初始化滑块为灰色
+        if (localStorage.getItem("key") == undefined) {
+            localStorage.setItem("key", "skin0 ");
+        }
+
+        // 打开浏览器的时候展示的储存的颜色
+        div.setAttribute("class", localStorage.getItem("key"));
+
+        // 得到储存的颜色的末尾数字
+        var str1 = localStorage.getItem("key");
+        var newStr1 = Number(str1.slice(-1));
+
+        //用末尾数字找到相应滑块将其获得向上效果
+        skinList[newStr1].setAttribute("id", "selected");
+
+        // 对每个滑块点击的时候进行的操作
+        for (var i = 0; i < skinList.length; i++) {
+            skinList[i].onclick = function() {
+
+                // 在点击的时候清除所有滑块向上的效果
+                for (var j = 0; j < skinList.length; j++) {
+                    if (skinList[j].getAttribute("id") == "selected") {
+                        skinList[j].removeAttribute("id");
+                    }
+                }
+
+                // 将点击的滑块改成向上的效果
+                this.setAttribute("id", "selected");
+
+                // 点击滑块颜色改变段落颜色
+                var str = this.getAttribute("class");
+                var newStr = str.slice(-1);
+                div.setAttribute("class", "skin" + newStr);
+
+                var data = "skin" + newStr;
+
+                // 改变存储的颜色
+                localStorage.setItem("key", data);
+                div.setAttribute("class", localStorage.getItem("key"));
+
+            }
+        }
+    </script>
+</body>
+
+</html>
