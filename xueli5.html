@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刮刮卡</title>
+    <style>
+        #span {
+            width: 400px;
+            height: 200px;
+            border: 1px solid blue;
+            position: absolute;
+            font-size: 70px;
+            color: red;
+            text-align: center;
+            line-height: 200px;
+        }
+        
+        #canvas {
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <span id="span"></span>
+    <canvas id="canvas" width="900" height="900"></canvas>
+
+    <script>
+        //创建绘图容器
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+        //定义鼠标按钮涂抹效果及初始化
+        var startFill = false;
+        //定义鼠标按钮触摸半径为30
+        var touchRadius = 30;
+
+        /*刮开图层后显示的内容为“一等奖/二等奖/三等奖/谢谢惠顾”其中随机的一个字符串。*/
+        //得到抽奖结果放置到一个数组里
+        var arr = ['谢谢惠顾', '一等奖', '二等奖', '三等奖'];
+        //随机抽取获奖结果
+        var result = arr[parseInt(Math.random() * 4)];
+        //将获奖结果显示在图层里面
+        var span = document.getElementById("span");
+        span.innerHTML = result;
+
+        /*在图层上点击或涂抹（点击然后拖动鼠标）时，把点击区域变为透明。*/
+        // 涂层的绘制
+        context.fillStyle = "#ccc";
+        context.fillRect(1, 1, 400, 200);
+
+        //定义一个绘制涂擦效果圆形的函数
+        function fillCircle(x, y, r) {
+            this.beginPath();
+            this.moveTo(x, y);
+            this.arc(x, y, r, 0, Math.PI * 2);
+            this.fill();
+        }
+
+        //得到涂抹百分比的函数
+        function getPercent(context) {
+            //得到画布的像素信息
+            var imageData = context.getImageData(1, 1, 399, 199);
+            //得到像素信息的数组
+            var opc = imageData.data;
+            //得到一个值来记录alpha=0的个数
+            var num = 0;
+            //for循环遍历来得到alpha=0的个数
+            for (var i = 0; i < opc.length; i += 4) {
+                //每次遍历得到alpha的值记录在a中
+                var a = opc[i + 3];
+                //若a=0，则透明，需要记录
+                if (a == 0) {
+                    num++;
+                }
+            }
+            //计算透明度与不透明度的比例（并乘以100便于后期比较）再四舍五入得到percent
+            var percent = Math.round((num / (opc.length / 4)) * 100);
+            return percent;
+        }
+
+        //鼠标按下监听
+        canvas.onmousedown = function(e) {
+            startFill = true;
+            var x = e.clientX;
+            var y = e.clientY;
+            context.globalCompositeOperation = 'destination-out';
+            fillCircle.call(context, x, y, touchRadius);
+        }
+
+        //鼠标移动监听
+        canvas.onmousemove = function(e) {
+            if (startFill) {
+                var x = e.clientX;
+                var y = e.clientY;
+                context.globalCompositeOperation = 'destination-out';
+                fillCircle.call(context, x, y, touchRadius);
+            }
+
+            /*能够获得涂抹区域百分比，当用户涂抹了60%后，去掉涂层完成刮奖*/
+            //得到画布的像素信息
+            var imageData = context.getImageData(1, 1, 399, 199);
+            //得到百分比
+            var percent = getPercent(context);
+            //当用户涂抹了60%以上之后，去掉涂层完成刮奖。
+            if (percent > 60) {
+                //更改像素，将alpha置为0，去掉图层
+                for (var i = 0; i < imageData.data.length; i += 4) {
+                    imageData.data[i + 3] = 0;
+                }
+                context.putImageData(imageData, 1, 1);
+            }
+        }
+
+        //鼠标弹起监听
+        canvas.onmouseup = function(e) {
+            startFill = false;
+        }
+    </script>
+</body>
+
+</html>
