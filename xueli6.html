@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>照片墙</title>
+    <style>
+        .bg {
+            background: url(images/bg3.JPG);
+            /* background-size: cover; */
+            text-align: center;
+            margin: 0 auto;
+            width: 100%;
+            height: 680px;
+        }
+        
+        ul {
+            padding-top: 20px;
+        }
+        
+        ul li {
+            display: inline-block;
+            margin-left: 25px;
+        }
+        
+        #photo {
+            border: 3px solid white;
+            background: white;
+        }
+        
+        .photo1 {
+            transform: rotate(-5deg);
+        }
+        
+        .photo2 {
+            transform: rotate(-2deg);
+        }
+        
+        .photo3 {
+            transform: rotate(-15deg);
+        }
+        
+        .photo4 {
+            transform: rotate(-2deg);
+        }
+        
+        .photo5 {
+            transform: rotate(5deg);
+        }
+        
+        .photo6 {
+            transform: rotate(12deg);
+        }
+        
+        #photo:hover {
+            transform: rotate(0deg) scale(1.2, 1.2);
+        }
+        
+        img {
+            width: 150px;
+            height: 100px;
+        }
+        
+        .word {
+            font-size: large;
+        }
+        
+        li div {
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+
+    <body>
+        <div class="bg">
+            <ul>
+                <li>
+                    <div class="photo1" id="photo">
+                        <img src="images/11.jpg" />
+                        <div class="word">相识</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="photo2" id="photo">
+                        <img style="width:110px;height:120px;" src="images/22.jpg" />
+                        <div class="word">凝视</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="photo3" id="photo">
+                        <img src="images/33.jpg" />
+                        <div class="word">沉睡</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="photo4" id="photo">
+                        <img src="images/44.jpg " />
+                        <div class="word">逗乐</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="photo5" id="photo">
+                        <img style="width:135px;height:110px; " src="images/55.jpg " />
+                        <div class="word">奔跑</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="photo6" id="photo">
+                        <img src="images/66.jpg " />
+                        <div class="word">玩耍</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </body>
+
+</html>
