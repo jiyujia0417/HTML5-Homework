@@ -1,0 +1,633 @@
+/* 重置样式*/
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.contain {
+    background: #F5F5F5;
+}
+
+.header-top a {
+    color: #fff;
+}
+
+.nav-whole {
+    margin-bottom: 0;
+}
+
+.top-list li {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.top-list li a:hover {
+    color: black;
+}
+
+.nav li {
+    font-size: 1.2em;
+}
+
+.nav-list li {
+    text-align: center;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+
+/* 手机端 */
+
+@media screen and (max-width: 667px) {
+    .nav-list {
+        background: rgba(255, 255, 255, 0.9);
+    }
+    .nav-list li {
+        text-align: center;
+    }
+    .p1-1 {
+        display: none;
+    }
+    .p2 {
+        display: none;
+    }
+    .p1-2 {
+        font-size: 1.3em;
+    }
+    .car {
+        display: none;
+    }
+    /* 热门路线 */
+    .route-word2 {
+        display: none;
+    }
+    .route-word1 {
+        border-left: 3px solid #CB5505;
+        padding-left: 5px;
+    }
+    .route-p1 {
+        display: none;
+    }
+    .route-sub1 div {
+        position: relative;
+    }
+    .route-p2 {
+        width: 100%;
+        margin: 0 auto;
+        position: absolute;
+        bottom: 0;
+        background-color: rgba(28, 28, 28, 0.9);
+        color: #fff;
+        padding: 20px;
+    }
+    .route-p3 {
+        position: absolute;
+        bottom: 5%;
+        right: 10%;
+        color: #fff;
+    }
+    .route-big {
+        font-size: 1.5em;
+    }
+    .route-btn {
+        margin: 30px;
+    }
+    .route-more {
+        text-align: center;
+    }
+    /* 填充背景 */
+    .map {
+        height: 300px;
+        background: url(img/back.png);
+        position: relative;
+    }
+    .mission-word {
+        width: 88%;
+        margin-left: auto;
+        margin-right: auto;
+        position: absolute;
+        bottom: 30px;
+        padding-left: 30px;
+    }
+    .mission-word1 {
+        border-left: 3px solid #E84509;
+        font-size: 1.2em;
+        margin-bottom: 20px;
+        padding-left: 10px;
+    }
+    .mission-word2 {
+        display: none;
+    }
+    .mission-word3 {
+        font: 1em;
+    }
+    .mission-right {
+        background-color: #fff;
+        height: 250px;
+    }
+    .mission-server {
+        color: #000;
+    }
+    .server-title {
+        font-size: 1.5em;
+        text-align: center;
+        margin-top: 60px;
+    }
+    .server-word {
+        line-height: 30px;
+        font-weight: lighter;
+        font-size: 1.3em;
+    }
+    .server-title1 {
+        font-size: 1.5em;
+        text-align: center;
+        margin-top: 60px;
+    }
+    .server-title {
+        display: none;
+    }
+    .mission-all {
+        display: none;
+    }
+    .mission-one1,
+    .mission-two1,
+    .mission-three1 {
+        border-bottom: 1px solid #E0E0E0;
+        margin-top: 10px;
+        padding-bottom: 20px;
+    }
+    .mission-img {
+        float: left;
+        height: 70px;
+        width: 30%;
+    }
+    .mission-p1 {
+        height: 70px;
+        padding-top: 10px;
+    }
+    .mission-one1 .mission-img {
+        background: url(img/icon11.png) no-repeat center;
+    }
+    .mission-two1 .mission-img {
+        background: url(img/icon22.png) no-repeat center;
+    }
+    .mission-three1 .mission-img {
+        background: url(img/icon33.png) no-repeat center;
+    }
+    /* support */
+    .sdis {
+        display: none;
+    }
+    .foot-bottom {
+        font-size: 13px;
+        text-align: center;
+        height: 198px;
+        background-color: #343235;
+        padding-top: 65px;
+        color: white;
+        margin-top: 43px;
+    }
+}
+
+
+/* PC端 */
+
+@media screen and (min-width: 668px) {
+    .nav-list li:hover {
+        border-bottom: 3px solid #CB5505;
+    }
+    .p1-2 {
+        display: none;
+    }
+    .plane {
+        display: none;
+    }
+    .route-word1 {
+        text-align: center;
+        font-size: 2em;
+    }
+    .route-word2 {
+        font-size: 1.2em;
+        text-align: center;
+    }
+    .route-sub1 {
+        width: 60%;
+        float: left;
+    }
+    .route-sub1 p {
+        width: 100%;
+        max-width: 588px;
+        margin-left: auto;
+        margin-right: auto;
+        background: rgb(28, 28, 28);
+        color: #fff;
+        font-size: 1.1em;
+        padding: 15px 25px;
+    }
+    .route-sub1 p span,
+    .route-sub2 p span {
+        font-size: 1.5em;
+    }
+    .route-sub2-1 {
+        background: url(img/hot3.jpg) no-repeat center;
+        margin-top: 27px;
+        height: 292px;
+    }
+    .route-sub2-2 {
+        background: url(img/hot4.jpg) no-repeat center;
+        height: 357px;
+    }
+    .route-sub2-3 {
+        background: url(img/hot5.jpg) no-repeat center;
+        height: 370px;
+    }
+    .route-sub2 {
+        margin-top: 22px;
+        width: 40%;
+        float: right;
+    }
+    .route-sub2 div {
+        position: relative;
+        padding: 0;
+        margin-top: 5px;
+    }
+    .route-sub2 div p {
+        height: 100px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        max-width: 610px;
+        margin: 0 auto;
+        color: #fff;
+        padding: 15px 25px;
+        font-size: 1.1em;
+        background: rgba(28, 28, 28, 0.5);
+    }
+    .route-p2 {
+        display: none;
+    }
+    .route-p3 {
+        display: none;
+    }
+    .route-more {
+        display: none;
+    }
+    .map {
+        height: 500px;
+        background: url(img/back.png);
+        position: relative;
+    }
+    .mission-word {
+        text-align: center;
+        width: 88%;
+        position: absolute;
+        bottom: 50px;
+    }
+    .mission-word1 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+    .mission-word3 {
+        display: none;
+    }
+    .mission-right {
+        background: #1B4F7B;
+        height: 350px;
+    }
+    .mission-server {
+        color: #fff;
+    }
+    .server-title {
+        font-size: 1.5em;
+        text-align: center;
+        margin-top: 60px;
+    }
+    .server-word {
+        margin-left: 40px;
+        margin-right: 40px;
+        line-height: 30px;
+        font-weight: lighter;
+    }
+    .server-title1 {
+        display: none;
+    }
+    .mission-one,
+    .mission-two,
+    .mission-three {
+        background-color: #1C5180;
+        width: 80%;
+    }
+    .mission-one-word,
+    .mission-two-word,
+    .mission-three-word {
+        color: #fff;
+        text-align: center;
+        margin-top: 30px;
+    }
+    /* 左边的图 */
+    .mission-one-img {
+        background: url(img/icon1.png) no-repeat, url(img/rorate.png) no-repeat;
+        background-position: center 35%, center center;
+        height: 200px;
+        margin-top: 40px;
+        position: relative;
+    }
+    .mission-one-img p {
+        position: absolute;
+        bottom: 40px;
+        left: 38%;
+        color: #fff;
+        font-size: 1.3em;
+        font-weight: lighter;
+    }
+    /* 中间的图 */
+    .mission-two-img {
+        background: url(img/icon2.png) no-repeat, url(img/rorate.png) no-repeat;
+        background-position: center 35%, center center;
+        height: 200px;
+        margin-top: 40px;
+        position: relative;
+    }
+    .mission-two-img p {
+        position: absolute;
+        bottom: 40px;
+        left: 38%;
+        color: #fff;
+        font-size: 1.3em;
+        font-weight: lighter;
+    }
+    /* 右边的图 */
+    .mission-three-img {
+        background: url(img/icon3.png) no-repeat, url(img/rorate.png) no-repeat;
+        background-position: center 35%, center center;
+        height: 200px;
+        margin-top: 40px;
+        position: relative;
+    }
+    .mission-three-img p {
+        position: absolute;
+        bottom: 40px;
+        left: 38%;
+        color: #fff;
+        font-size: 1.3em;
+        font-weight: lighter;
+    }
+    .mission-all1 {
+        display: none;
+    }
+    /* pc foot */
+    .support {
+        width: 100%;
+        height: 500px;
+        background: #373538;
+        color: #fff;
+    }
+    .foot {
+        margin: 0 auto;
+        width: 88%;
+    }
+    .support-box {
+        height: 500px;
+        position: relative;
+    }
+    .foot-text-one {
+        margin-top: 50px;
+        height: 70px;
+    }
+    .foot-text-two {
+        height: 50px;
+        margin-top: 25px;
+    }
+    .foot-text-three {
+        margin-top: 25px;
+        height: 25px;
+        ;
+    }
+    .foot-text-four {
+        margin-top: 25px;
+        height: 45px;
+    }
+    .foot-text-left {
+        width: 10%;
+        font-size: 1.3em;
+        float: left;
+    }
+    .foot-text-right {
+        width: 90%;
+        font-size: 1.1em;
+        float: left;
+        font-weight: 50;
+    }
+    .foot-bottom {
+        width: 100%;
+        height: 158px;
+        font-size: 1.3em;
+        text-align: center;
+        border-top: 1px solid #404040;
+        padding: 44px 0px;
+        position: absolute;
+        bottom: 0px;
+    }
+    .foot-text-right-top>img {
+        margin-right: 15px;
+    }
+    .foot-text-right-bottom>div {
+        width: 112px;
+        text-align: center;
+        margin-right: 12px;
+        float: left;
+    }
+    .dis {
+        display: none;
+    }
+}
+
+.route-sub1 div {
+    height: 438px;
+}
+
+.navbar-header {
+    position: relative;
+}
+
+.hidden-bottom {
+    position: absolute;
+    left: 57%;
+    height: 45px;
+    width: 25%;
+    border-radius: 10%;
+    background-color: #E84509;
+    color: #fff;
+    font-size: 1.3em;
+    margin-right: 30px;
+    margin-top: 18px;
+}
+
+.navbar-toggle {
+    margin-top: 20px;
+    border: none;
+}
+
+.navbar-default .navbar-toggle span {
+    margin-bottom: 10px;
+    background: gray;
+}
+
+.banner {
+    width: 100%;
+    height: 446px;
+    background: url(img/banner.jpg) repeat-x center;
+}
+
+.big-title {
+    font-size: 2.5em;
+    font-weight: lighter;
+    color: #fff;
+    margin-top: 55px;
+    margin-bottom: 25px;
+}
+
+.p {
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: lighter;
+    margin-bottom: 110px;
+}
+
+.p1 {
+    border-top: 1px solid rgba(100, 100, 100, 0.9);
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding: 10px;
+}
+
+.p2 {
+    padding: 10px;
+    border-bottom: 1px solid rgba(100, 100, 100, 0.9);
+}
+
+.car {
+    position: relative;
+    height: 414px;
+    width: 88%;
+    margin: 35px auto;
+    padding-top: 25px;
+}
+
+.car-img {
+    display: inline-block;
+    width: 100%;
+    height: 364px;
+    background: url(img/Sbanner2.jpg) no-repeat;
+}
+
+.car-info {
+    width: 29%;
+    height: 364px;
+    background-color: #18396E;
+    position: absolute;
+    right: 0;
+    text-align: center;
+}
+
+.car-info a {
+    color: #fff;
+    font-size: 1.7em;
+    font-weight: lighter;
+}
+
+.car-info img {
+    margin-top: 80px;
+    margin-bottom: 15px;
+}
+
+.car-search {
+    line-height: 50px;
+    margin: 45px auto;
+    /* margin-top: 20px; */
+    border: 1px solid #fff;
+    width: 150px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.car-search:hover {
+    background-color: #10106E;
+}
+
+.plane {
+    height: 200px;
+    background-color: #fff;
+    margin-top: 25px;
+}
+
+.plane-box {
+    width: 88%;
+    height: 90%;
+    margin: 0px auto;
+    position: relative;
+}
+
+.plane-img {
+    line-height: 200px;
+}
+
+.plane-word {
+    position: absolute;
+    left: 110px;
+    top: 50px;
+}
+
+.plane-title {
+    font-size: 1.8em;
+    color: #1C5180;
+    margin-bottom: 20px;
+}
+
+.plane-p {
+    color: rgb(94, 87, 87);
+    font-size: 1.2em;
+}
+
+.plane-btn {
+    position: absolute;
+    right: 0;
+    top: 75px;
+    font-size: 1.5em;
+    font-weight: lighter;
+    width: 25%;
+    border-radius: 10px;
+}
+
+.popular-routes {
+    width: 88%;
+    height: 800px;
+    margin: 0 auto;
+}
+
+.mission-img1 {
+    background: url(img/mission1.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.mission-img2 {
+    height: 472px;
+    background: url(img/mission2.jpg) no-repeat center;
+    margin-top: 10px;
+}
+
+.mission-one,
+.mission-two,
+.mission-three {
+    height: 350px;
+}
